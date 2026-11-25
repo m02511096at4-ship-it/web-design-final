@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-server",
+  "version": "1.0.0",
+  "description": "ウェブデザイン 第6回 作品の追加・削除ができる API サーバ",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>作品の管理 | ものつくり 太郎</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 管理画面。クライアント本人が使う。公開画面のメニューには出さない -->
+  <header class="site-header">
+    <p class="site-name">作品の管理</p>
+    <nav aria-label="管理メニュー">
+      <ul>
+        <li><a href="index.html">公開画面を見る</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 結果を知らせる欄(追加した、削除した、つながらない など) -->
+    <p id="status" class="notice" role="status" hidden></p>
+
+    <section>
+      <h1 id="form-title">作品を追加する</h1>
+
+      <!-- 入力の誤りをまとめて知らせる欄 -->
+      <div id="error-summary" class="error-summary" role="alert" tabindex="-1" hidden>
+        <h2>入力を直してください</h2>
+        <ul id="error-list"></ul>
+      </div>
+
+      <form id="work-form" novalidate>
+        <div class="field">
+          <label for="title">作品名 <span class="required">必須</span></label>
+          <p class="hint" id="title-hint">40文字まで</p>
+          <input id="title" name="title" type="text" maxlength="40" required aria-describedby="title-hint title-error">
+          <p class="error-text" id="title-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="year">制作時期 <span class="required">必須</span></label>
+          <p class="hint" id="year-hint">例:2026年 春</p>
+          <input id="year" name="year" type="text" required aria-describedby="year-hint year-error">
+          <p class="error-text" id="year-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="summary">一覧に出す一言 <span class="required">必須</span></label>
+          <p class="hint" id="summary-hint">80文字まで。採用担当者が一覧で最初に読む文</p>
+          <input id="summary" name="summary" type="text" maxlength="80" required aria-describedby="summary-hint summary-error">
+          <p class="error-text" id="summary-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="tools">使った道具・技術</label>
+          <p class="hint" id="tools-hint">100文字まで。例:ESP32、Fusion 360</p>
+          <input id="tools" name="tools" type="text" maxlength="100" aria-describedby="tools-hint tools-error">
+          <p class="error-text" id="tools-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="role">担当</label>
+          <p class="hint" id="role-hint">60文字まで。例:回路とケース設計(3人チーム)</p>
+          <input id="role" name="role" type="text" maxlength="60" aria-describedby="role-hint role-error">
+          <p class="error-text" id="role-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="what">何を作ったか</label>
+          <p class="hint" id="what-hint">400文字まで</p>
+          <textarea id="what" name="what" rows="4" maxlength="400" aria-describedby="what-hint what-error"></textarea>
+          <p class="error-text" id="what-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="point">工夫した点</label>
+          <p class="hint" id="point-hint">400文字まで。何を測って、どう直したか</p>
+          <textarea id="point" name="point" rows="4" maxlength="400" aria-describedby="point-hint point-error"></textarea>
+          <p class="error-text" id="point-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="image">画像のファイル名</label>
+          <p class="hint" id="image-hint">images フォルダに入れた画像。例:images/logger.jpg。空なら仮の画像</p>
+          <input id="image" name="image" type="text" aria-describedby="image-hint">
+        </div>
+
+        <div class="field">
+          <label for="alt">画像の説明(代替テキスト)</label>
+          <p class="hint" id="alt-hint">何の画像かを1文で。例:温度ロガーの基板とケース</p>
+          <input id="alt" name="alt" type="text" aria-describedby="alt-hint">
+        </div>
+
+        <div class="field">
+          <label class="check-label">
+            <input id="featured" name="featured" type="checkbox">
+            作品一覧の先頭に出す
+          </label>
+          <p class="hint" id="featured-hint">付けられるのは1件だけ。別の作品に付けると、前の作品からは外れます</p>
+        </div>
+
+        <p class="form-actions">
+          <button id="submit-button" type="submit" class="btn">追加する</button>
+          <button id="cancel-button" type="button" class="btn btn-secondary" hidden>編集をやめる</button>
+        </p>
+      </form>
+    </section>
+
+    <section>
+      <h2>登録した作品</h2>
+      <ul id="admin-list" class="admin-list"></ul>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

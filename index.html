@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ものつくり 太郎 | ポートフォリオ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <p class="site-name"><a href="index.html">ものつくり 太郎</a></p>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html" aria-current="page">トップ</a></li>
+        <li><a href="works.html">作品</a></li>
+        <li><a href="index.html#profile">プロフィール</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <h1>図面どおりに、最後まで作りきる。</h1>
+      <p>電子機器メーカーの設計・試作職を志望。情報メカトロニクス学科 2年</p>
+    </section>
+
+    <section id="works">
+      <h2>作品</h2>
+      <ul class="work-list">
+        <li class="work-card">
+          <a href="work.html?id=1">
+            <img src="images/placeholder.svg" alt="自作した温度ロガーの基板と、3Dプリントしたケース">
+            <h3>温度ロガー</h3>
+            <p>ESP32と温度センサで1週間の記録を取り、ケースまで自分で設計した。</p>
+          </a>
+        </li>
+        <li class="work-card">
+          <a href="work.html?id=2">
+            <img src="images/placeholder.svg" alt="ライントレースロボットが黒い線の上を走っている写真">
+            <h3>ライントレースロボット</h3>
+            <p>高校のロボット部で製作。センサの配置を3回作り直して安定走行させた。</p>
+          </a>
+        </li>
+        <li class="work-card">
+          <a href="work.html?id=3">
+            <img src="images/placeholder.svg" alt="Illustratorで作成した学園祭ポスター">
+            <h3>学園祭ポスター</h3>
+            <p>ICT基礎Ⅱの課題。日時と場所が5秒で分かる配置を目指した。</p>
+          </a>
+        </li>
+      </ul>
+      <p><a class="btn" href="works.html">作品をすべて見る</a></p>
+    </section>
+
+    <section id="skills">
+      <h2>できること</h2>
+      <ul>
+        <li>回路の設計と基板のはんだ付け(ESP32、Arduino)</li>
+        <li>3D CADでのケース設計と3Dプリント</li>
+        <li>Illustrator、Photoshopでの図面・資料の作成</li>
+      </ul>
+    </section>
+
+    <section id="profile">
+      <h2>プロフィール</h2>
+      <p>埼玉県出身。高校ではロボット部に所属し、大会に向けて機体を3年間作り続けました。手を動かして形にするまでやめないところが強みだと、周りからよく言われます。</p>
+      <p id="profile-detail" hidden>大学では電子工作サークルに入り、後輩にはんだ付けを教えています。将来は、自分が設計した装置が工場で動いているところを見るのが目標です。</p>
+      <button id="more" type="button" class="btn">もっと読む</button>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> ものつくり 太郎 ― ウェブデザイン 第6回 完成例</p>
+  </footer>
+
+  <script src="practice.js"></script>
+</body>
+</html>

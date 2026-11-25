@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>作品 | ものつくり 太郎</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <p class="site-name"><a href="index.html">ものつくり 太郎</a></p>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="works.html" aria-current="page">作品</a></li>
+        <li><a href="index.html#profile">プロフィール</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="work-detail">
+      <!-- 中身は detail.js が works.json から入れる。id="" の付いた要素に書き込む -->
+      <h1 id="title">作品名</h1>
+      <p class="work-image"><img id="image" src="images/placeholder.svg" alt=""></p>
+
+      <dl>
+        <dt>制作時期</dt><dd id="year"></dd>
+        <dt>使った道具</dt><dd id="tools"></dd>
+        <dt>担当</dt><dd id="role"></dd>
+      </dl>
+
+      <h2>何を作ったか</h2>
+      <p id="what"></p>
+
+      <h2>工夫した点</h2>
+      <p id="point"></p>
+
+      <p><a class="btn" href="works.html">作品一覧へ戻る</a></p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 ものつくり 太郎</p>
+  </footer>
+
+  <script src="detail.js"></script>
+</body>
+</html>
